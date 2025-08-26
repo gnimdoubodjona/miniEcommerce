@@ -4,6 +4,7 @@ import Home from "../features/Client/pages/Home";
 import AdminLayout from "../layouts/AdminLayout";
 import Dashboard from "../features/Admin/pages/Dashboard";
 import Login from "../features/Auth/login.tsx";
+import Register from "../features/Auth/Register.tsx";
 
 function AppRoutes() {
     return (
@@ -18,7 +19,9 @@ function AppRoutes() {
                 <Route path="dashboard" element={<Dashboard/>}/>
             </Route>
 
+            {/* routes auth */}
             <Route path="login" element={<Login />}></Route>
+            <Route path="register" element={<Register />}></Route>
 
         </Routes>
     )
