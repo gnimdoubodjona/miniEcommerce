@@ -1,7 +1,17 @@
 import {FcGoogle} from "react-icons/fc";
 import {FaFacebook} from "react-icons/fa";
+//import { useState } from "react";
+import {useAuthActions} from "@convex-dev/auth/react";
+
+
+
 
 function Login() {
+
+
+    const {signIn} = useAuthActions();
+
+
     return (
         <div className="h-screen grid grid-cols-1 md:grid-cols-2">
 
@@ -56,15 +66,20 @@ function Login() {
                 </div>
 
                 {/* Formulaire */}
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={(event) => {
+                    event.preventDefault();
+                    const formData = new FormData(event.currentTarget);
+                    void signIn("resend", formData);
+                }}>
                     <label className="font-bold ">Email</label>
                     <input
                         type="email"
+                        name="email"
                         placeholder="amahKwatcha@gmail.com"
                         className="w-full border-4 rounded-md px-3 py-2 shadow-sm  border-black focus:ring-black"
                     />
 
-                    <button className="w-full bg-black text-white py-2 rounded-md font-semibold">
+                    <button className="w-full bg-black text-white py-2 rounded-md font-semibold" type="submit">
                         Connexion
                     </button>
                 </form>
