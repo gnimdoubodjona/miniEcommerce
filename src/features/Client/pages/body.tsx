@@ -2,6 +2,7 @@ import shoe1 from '../../../assets/shoe-1.png';
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
+
 function Body() {
     const heroTextRef = useRef(null);
 
@@ -71,31 +72,128 @@ function Body() {
 
     return (
         <div>
-            <div className="grid grid-flow-col grid-rows-2 h-screen mt-20 p-2">
-                <div className="row-span-3">
-                    <h3 className="text-red-700 font-semibold">Qualité & Durable</h3>
+            {/* Hero Section */}
+            <div>   {/* ✅ Fond léger */}
+                <div className="grid md:grid-cols-2 gap-8 mt-10 px-4 items-center pb-20">
+                    {/* ✅ pb-20 = padding-bottom pour respirer */}
 
-                    {/* Le texte qui sera animé mot par mot */}
-                    <p
-                        ref={heroTextRef}
-                        className="hero-text mt-2 max-w-lg text-5xl text-black font-extrabold"
-                    >
-                        Des Produits bien pour vous.
-                    </p>
+                    {/* Texte */}
+                    <div>
+                        <h3 className="text-red-700 font-semibold">Qualité & Durable</h3>
 
-                    <p className="other-text mt-5 max-w-lg text-2xl text-black">
-                        Bien plus qu'un simple site, vous trouverez vos articles de tous genre de premier choix juste ici.
-                    </p>
+                        <p
+                            ref={heroTextRef}
+                            className="hero-text mt-2 max-w-lg text-4xl md:text-5xl text-black font-extrabold"
+                        >
+                            Des Produits bien pour vous.
+                        </p>
 
-                    <button className="cta-button mt-5 rounded-full bg-black text-white px-4 py-2">
-                        Voir les produits
-                    </button>
+                        <p className="other-text mt-5 max-w-lg text-lg md:text-2xl text-black">
+                            Bien plus qu'un simple site, vous trouverez vos articles de tous genre
+                            de premier choix juste ici.
+                        </p>
+
+                        <button className="cta-button mt-5 rounded-full bg-black text-white px-6 py-2 hover:bg-gray-800 transition">
+                            Voir les produits
+                        </button>
+                    </div>
+
+                    {/* Image */}
+                    <div className="flex justify-center">
+                        <img
+                            src={shoe1}
+                            alt="Panier rempli"
+                            className="w-full max-w-md h-auto object-contain"
+                        />
+                    </div>
                 </div>
-                <div className="row-span-1">
-                    <img src={shoe1} alt="Panier rempli" className="w-130 h-auto object-contain"/>
+            </div>
+            {/* Section Meilleures ventes */}
+            <div className="mt-16 px-4 mb-16">
+                <h3 className="text-2xl font-bold mb-6">Meilleures ventes</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                    {/* Exemple Card */}
+                    <div className="rounded-lg border border-gray-300 shadow-sm overflow-hidden">
+                        {/* Partie image */}
+                        <div className="relative h-64 bg-gray-100 flex items-center justify-center">
+                            {/* Badge */}
+                            <div className="absolute top-2 left-2 inline-flex items-center justify-center bg-gray-200 border border-black px-3 py-1 rounded-md">
+                                <p className="text-xs font-semibold">10% des ventes</p>
+                            </div>
+
+                            <img
+                                src={shoe1}
+                                alt="Panier rempli"
+                                className="h-full object-contain"
+                            />
+                        </div>
+
+                        {/* Partie texte */}
+                        <div className="p-4 flex justify-between items-start">
+                            <div>
+                                <h3 className="text-lg font-semibold">Prix des NikeeeAir</h3>
+                                <p className="text-sm text-gray-600">Chaussure pour femme</p>
+                                <p className="text-sm text-gray-600">10 couleurs</p>
+                            </div>
+                            <p className="text-xl font-bold">128$</p>
+                        </div>
+                    </div>
+
+                    <div className="rounded-lg border border-gray-300 shadow-sm overflow-hidden">
+                        {/* Partie image */}
+                        <div className="relative h-64 bg-gray-100 flex items-center justify-center">
+                            {/* Badge */}
+                            <div className="absolute top-2 left-2 inline-flex items-center justify-center bg-gray-200 border border-black px-3 py-1 rounded-md">
+                                <p className="text-xs font-semibold">10% des ventes</p>
+                            </div>
+
+                            <img
+                                src={shoe1}
+                                alt="Panier rempli"
+                                className="h-full object-contain"
+                            />
+                        </div>
+
+                        {/* Partie texte */}
+                        <div className="p-4 flex justify-between items-start">
+                            <div>
+                                <h3 className="text-lg font-semibold">Prix des NikeeeAir</h3>
+                                <p className="text-sm text-gray-600">Chaussure pour femme</p>
+                                <p className="text-sm text-gray-600">10 couleurs</p>
+                            </div>
+                            <p className="text-xl font-bold">128$</p>
+                        </div>
+                    </div>
+
+                    <div className="rounded-lg border border-gray-300 shadow-sm overflow-hidden">
+                        {/* Partie image */}
+                        <div className="relative h-64 bg-gray-100 flex items-center justify-center">
+                            {/* Badge */}
+                            <div className="absolute top-2 left-2 inline-flex items-center justify-center bg-gray-200 border border-black px-3 py-1 rounded-md">
+                                <p className="text-xs font-semibold">10% des ventes</p>
+                            </div>
+
+                            <img
+                                src={shoe1}
+                                alt="Panier rempli"
+                                className="h-full object-contain"
+                            />
+                        </div>
+
+                        {/* Partie texte */}
+                        <div className="p-4 flex justify-between items-start">
+                            <div>
+                                <h3 className="text-lg font-semibold">Prix des NikeeeAir</h3>
+                                <p className="text-sm text-gray-600">Chaussure pour femme</p>
+                                <p className="text-sm text-gray-600">10 couleurs</p>
+                            </div>
+                            <p className="text-xl font-bold">128$</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     )
 }
 
